@@ -2,6 +2,9 @@
 
 
 %genericPizarriaStyle {
+
+
+
     margin-bottom: 24px;
 
     span {
@@ -35,6 +38,36 @@
         height: 187px;
     }
 
+    .right-col {
+        position: relative;
+
+        .floating-ratings {
+            position: absolute !important;
+            right: 34px;
+            top: 14px;
+
+            small {
+                font-style: normal;
+                font-size: 10px;
+                line-height: 13px;
+                color: $grey;
+                display: block;
+                margin-bottom: -6px;
+                text-align: center;
+                font-weight: 200
+            }
+
+            span {
+                margin: 0 2px 0 0;
+                line-height: unset !important;
+
+                &:last-of-type {
+                    margin: 0
+                }
+            }
+        }
+    }
+
     &>.ant-col {
 
         &:first-of-type {
@@ -54,8 +87,9 @@
     }
 
     .details {
-        -ms-flex-wrap: nowrap;
-        flex-wrap: nowrap;
+        -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+        padding: 0 !important;
 
         .ant-col {
             margin-right: 8px;
@@ -81,8 +115,12 @@
 
             }
 
-            width: calc((100% - 8px) / 3);
-
+            -webkit-box-pack: start;
+            -ms-flex-pack: start;
+            justify-content: flex-start;
+            min-width: 80px;
+            margin-bottom: 8px;
+            width: calc((100% - 16px) / 3);
 
         }
     }
@@ -168,6 +206,10 @@
                 border-bottom: none;
                 height: 47px;
                 background: rgba(0, 0, 0, 0.3);
+
+                @media screen and (max-width: 1370px) {
+                    padding-left: 38px
+                }
             }
 
             &-tab {
@@ -182,8 +224,16 @@
             &-tabpane {
                 .ant-row {
                     margin: 8px 0 0;
-                    padding: 0 calc((100% - 969px)/2)
+
+                    padding: 0 calc((100% - 969px)/2);
+
+                    @media screen and (max-width: 1370px) {
+                        padding: 0 38px
+                    }
+
+
                 }
+
 
                 &.tab2 {
                     .ant-col {
@@ -235,7 +285,10 @@
                                             background: transparent;
                                             -webkit-box-shadow: none;
                                             box-shadow: none;
-                                            padding: 0;
+                                            padding: 0 !important;
+                                            position: relative;
+
+
 
                                             &>.ant-col {
                                                 width: 100% !important;
@@ -292,6 +345,10 @@
                             position: relative;
                             padding: 24px calc((100% - 969px)/2) 80px;
                             margin-bottom: 40px;
+
+                            @media screen and (max-width: 1370px) {
+                                padding: 24px 38px 80px
+                            }
 
                             .ant-col {
                                 background: transparent;
@@ -469,6 +526,22 @@
                             width: 294px;
                             margin-right: 53px;
 
+
+                            @media screen and (max-width: 1024px) {
+
+                                display: -webkit-box;
+                                display: -ms-flexbox;
+                                display: flex;
+                                margin: 0 0 24px;
+                                width: 100%;
+                                -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
+                                -webkit-box-pack: center;
+                                -ms-flex-pack: center;
+                                justify-content: center
+                            }
+
+
                             .row {
                                 -webkit-box-orient: vertical;
                                 -webkit-box-direction: normal;
@@ -558,7 +631,23 @@
                             width: 100%;
 
                             .pizarria-card {
-                                @extend %genericPizarriaStyle
+                                position: relative;
+                                @extend %genericPizarriaStyle;
+                                padding: 0 !important;
+
+
+                                @media screen and (max-width: 650px) {
+                                    -webkit-box-orient: vertical;
+                                    -webkit-box-direction: normal;
+                                    -ms-flex-direction: column;
+                                    flex-direction: column;
+
+                                    .right-col {
+                                        width: 100% !important
+                                    }
+                                }
+
+
                             }
 
 
@@ -573,6 +662,16 @@
                                 -webkit-box-pack: center;
                                 -ms-flex-pack: center;
                                 justify-content: center;
+                                -ms-flex-wrap: wrap;
+                                flex-wrap: wrap;
+
+                                @media screen and (max-width: 650px) {
+                                  -webkit-box-pack: start;
+                                      -ms-flex-pack: start;
+                                          justify-content: flex-start;
+
+
+                                }
 
                                 &-options {
                                     display: none
@@ -611,6 +710,8 @@
                             }
                         }
                     }
+
+
                 }
             }
         }

@@ -10,6 +10,7 @@ import Restaurant3 from "../assets/location3.png";
 import Restaurant from "../assets/big-restaurant-image.png";
 import Menu4 from "../assets/menu4.png";
 import MenuCard2 from "../reusable-components/MenuCard2";
+import ReactStars from "react-stars";
 const { TabPane } = Tabs;
 export const Restaurants = () => {
     function itemRender(current, type, originalElement) {
@@ -74,7 +75,7 @@ export const Restaurants = () => {
                     {/* tab1 content */}
                     <TabPane tab="Choose Pizarria" key="1">
                         <Row>
-                            <Col>
+                            <Col className="left-column">
                                 <Row className="row row-1">
                                     <span>recommended</span>
                                     <ol>
@@ -95,6 +96,7 @@ export const Restaurants = () => {
                             <Col>
                                 <PizarriaCard
                                     imgSrc={Restaurant1}
+                                    stars={4}
                                     name="Dodo pizza"
                                     location="Herbert Macaulay"
                                     category="Pizza, Other, Grill & Steak"
@@ -108,6 +110,7 @@ export const Restaurants = () => {
                                     category="Pizza, Other, Grill & Steak"
                                     edt="60 mins"
                                     minOrder="3"
+                                    stars={2}
                                 />
                                 <PizarriaCard
                                     imgSrc={Restaurant3}
@@ -116,6 +119,7 @@ export const Restaurants = () => {
                                     category="Pizza, Other, Grill & Steak"
                                     edt="60 mins"
                                     minOrder="3"
+                                    stars={3.5}
                                 />
 
                                 <Pagination
@@ -137,10 +141,23 @@ export const Restaurants = () => {
                                 </Col>
                                 <Col className="right-column">
                                     <Row className="pizarria-card">
-                                        <div className="floating-rating"></div>
-
                                         <Col className="right-col">
                                             <span>Dodo pizza</span>
+                                            <div className="floating-ratings">
+                                                <small>
+                                                    Based on 26 reviews
+                                                </small>
+                                                <ReactStars
+                                                    count={5}
+                                                    value={4.5}
+                                                    edit={false}
+                                                    size={20}
+                                                    color2="#F8B80C"
+                                                    color1="#ABABAB"
+                                                    className="stars-container"
+                                                />
+                                            </div>
+
                                             <span>Herbert Macaulay</span>
                                             <Row
                                                 className="details"
