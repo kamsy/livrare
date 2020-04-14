@@ -1,0 +1,190 @@
+@import "variables";
+@import "mixins";
+
+
+.error-page {
+    position: relative;
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    background: radial-gradient(circle at center, $yellow, darken($yellow, 30%));
+    color: $white;
+
+    h4 {
+        color: $white
+    }
+
+    a {
+        color: $orange
+    }
+
+
+
+    .image {
+        width: calc(100% - 2rem);
+        margin: 0 auto;
+        position: relative;
+
+        svg {
+            width: 100%;
+            max-width: 20rem !important;
+        }
+
+        .rotate-me {
+            left: 35%;
+            top: -100px;
+            position: relative;
+            width: 97px;
+            height: 93px;
+            margin-bottom: -50px;
+            -webkit-animation: rotation 2s infinite linear;
+            animation: rotation 2s infinite linear;
+
+            @-webkit-keyframes rotation {
+                from {
+                    -webkit-transform: rotate(0deg);
+                }
+
+                to {
+                    -webkit-transform: rotate(359deg);
+                }
+            }
+
+
+            @keyframes rotation {
+                from {
+                    -webkit-transform: rotate(0deg);
+                }
+
+                to {
+                    -webkit-transform: rotate(359deg);
+                }
+            }
+        }
+
+        .pizza {
+            position: absolute;
+            top: -17px;
+            left: 9px;
+            // top: 0;
+            // left: 45%;
+            // -webkit-transform: translate(-50%, 0);
+            // transform: translate(-50%, 0);
+            width: 50px;
+            height: 50px;
+
+
+
+            -webkit-transition: all 1.5s ease-in-out;
+            transition: all 1.5s ease-in-out;
+            -webkit-box-align: center;
+            -ms-flex-align: center;
+            align-items: center;
+            background: none;
+
+
+            .slice1,
+            .slice2,
+            .slice3,
+            .slice4,
+            .slice5,
+            .slice6,
+            .slice7 {
+                font-size: 50px;
+                overflow: visible;
+                position: absolute;
+                width: 0;
+                height: 0;
+                left: 0;
+                // -webkit-transform-origin: 50% 100%;
+                // transform-origin: 50% 100%;
+                -webkit-animation: rotate 13s linear infinite;
+                animation: rotate 13s linear infinite;
+
+
+
+
+            }
+
+            .slice1 {
+                top: 0;
+                -webkit-transform: rotate(0deg);
+                transform: rotate(0deg);
+
+
+            }
+
+            .slice2 {
+                -webkit-transform: rotate(50deg);
+                transform: rotate(50deg);
+                left: 64px;
+                top: -7px;
+            }
+
+            .slice3 {
+                -webkit-transform: rotate(103deg);
+                transform: rotate(103deg);
+                left: 111px;
+                top: 40px;
+            }
+
+            .slice4 {
+                -webkit-transform: rotate(156deg);
+                transform: rotate(156deg);
+                left: 101px;
+                top: 105px;
+            }
+
+            .slice5 {
+                -webkit-transform: rotate(209deg);
+                transform: rotate(209deg);
+                left: 42px;
+                top: 137px;
+            }
+
+            .slice6 {
+                -webkit-transform: rotate(-98deg);
+                transform: rotate(-98deg);
+                left: -18px;
+                top: 110px;
+            }
+
+            .slice7 {
+                -webkit-transform: rotate(-50deg);
+                transform: rotate(-50deg);
+                left: -34px;
+                top: 51px;
+            }
+
+        }
+    }
+
+    .error-wrapper {
+        text-align: center;
+        margin: 0 auto;
+    }
+
+    .err-text-wrapper {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+        flex-direction: column;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        padding: 0 16px;
+    }
+}

@@ -1,0 +1,21 @@
+@import "variables";
+
+
+@mixin hoverMixin {
+    -webkit-transition: -webkit-transform 1s ease-out;
+    cursor: pointer;
+    transition: -webkit-transform 1s ease-out;
+    transition: transform 1s ease-out;
+    transition: transform 1s ease-out, -webkit-transform 1s ease-out;
+    &:hover {
+        -webkit-box-shadow: 5px 5px 20px rgba($gray, 0.2);
+        box-shadow: 5px 5px 20px rgba($gray, 0.2);
+        -webkit-transform: scale(1.03);
+        transform: scale(1.03);
+    }
+}
+
+@mixin shadowMixin {
+    -webkit-box-shadow: 5px 5px 15px #00000029;
+    box-shadow: 5px 5px 15px #00000029;
+}
