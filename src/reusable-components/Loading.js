@@ -1,8 +1,10 @@
 import React from "react";
 import "../scss/loading.scss";
-export default ({ loaded }) => {
+export default ({ loading }) => {
     return (
-        <div className={`${loaded} pizza-cont`}>
+        <div
+            className={`${loading ? "show" : "hide"} pizza-cont`}
+            data-testid="loader">
             <div className="rotate-me">
                 <div className="pizza">
                     <div className="slice1">
@@ -41,8 +43,6 @@ export default ({ loaded }) => {
                         </span>
                     </div>
                 </div>
-
-
             </div>
         </div>
     );

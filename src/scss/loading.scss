@@ -6,7 +6,6 @@
     top: 0;
     bottom: 0;
     z-index: 20;
-
     height: 100vh;
     width: 100vw;
     -webkit-box-align: center;
@@ -24,7 +23,7 @@
     -webkit-transition: all 2s ease-in-out;
     transition: all 2s ease-in-out;
 
-    &.true {
+    &.hide {
         opacity: 0;
         width: 0;
 

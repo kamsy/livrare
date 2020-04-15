@@ -6,7 +6,9 @@ export default ({ imgSrc, name, location, category, edt, minOrder }) => (
     <Col className="top-restaurant-card" sm={24} md={12} lg={12} xl={8}>
         <Row>
             <img src={imgSrc} alt={`shot ${name} pizza restaurant`} />
-            <NavLink to="/restaurants">{name}</NavLink>
+            <NavLink to="/restaurants" data-testid="go-to-restaurants-page">
+                {name}
+            </NavLink>
         </Row>
         <Row>
             <Row>{location}</Row>

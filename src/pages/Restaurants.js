@@ -71,7 +71,7 @@ export const Restaurants = () => {
             </div>
 
             <div className="section2">
-                <Tabs defaultActiveKey="1">
+                <Tabs defaultActiveKey="1" data-testid="ant-tabs">
                     {/* tab1 content */}
                     <TabPane tab="Choose Pizarria" key="1">
                         <Row>
@@ -184,7 +184,7 @@ export const Restaurants = () => {
                                             <ul>
                                                 {timeTable.map(
                                                     ({ name, time }) => (
-                                                        <li>
+                                                        <li key={name}>
                                                             <span className="bold">
                                                                 {name}:
                                                             </span>

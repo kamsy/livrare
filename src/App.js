@@ -11,7 +11,7 @@ import Layout from "./reusable-components/Layout";
 import { Landing } from "./pages/Landing";
 import Loading from "./reusable-components/Loading";
 import { Restaurants } from "./pages/Restaurants";
-
+export const loaderTimer = 1000;
 export const url = "/";
 // variable to hold auth status and also functions to convert it
 export const fakeAuth = {
@@ -36,16 +36,16 @@ const WrappedRoute = ({ component: Component, ...rest }) => (
 );
 
 class App extends Component {
-    state = { loaded: false };
+    state = { loading: true };
     render() {
-        const { loaded } = this.state;
-        !loaded &&
+        const { loading } = this.state;
+        loading &&
             setTimeout(() => {
-                this.setState({ loaded: true });
-            }, 1000);
+                this.setState({ loading: false });
+            }, loaderTimer);
         return (
             <>
-                <Loading loaded={loaded} />
+                <Loading loading={loading} />
 
                 <Suspense fallback={<Spin tip="Loading..." />}>
                     <Router history={history}>
