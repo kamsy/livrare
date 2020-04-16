@@ -56,7 +56,7 @@ const Page_404 = () => (
                 </p>
                 <p>
                     Either check the URL or{" "}
-                    <Link to={`${url}`} className="blue underline csr">
+                    <Link to={`${url}`} className="blue underline csr" data-testid='to-safehouse'>
                         go home
                     </Link>
                     .

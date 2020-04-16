@@ -29,8 +29,9 @@
 
     .image {
         width: calc(100% - 2rem);
-        margin: 0 auto;
+        margin: 0 auto 24px;
         position: relative;
+        height: 130px;
 
         svg {
             width: 100%;

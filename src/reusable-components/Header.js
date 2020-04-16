@@ -36,7 +36,10 @@ class Header extends PureComponent {
         return (
             <Row className="header" justify="space-between" align="middle">
                 <Col className="left-container">
-                    <NavLink to="/" activeClassName={""}>
+                    <NavLink
+                        to="/"
+                        activeClassName={""}
+                        data-testid="route-home-from-header">
                         <img src={Logo} alt="logo" />
                     </NavLink>
                 </Col>
@@ -45,7 +48,7 @@ class Header extends PureComponent {
                         <ul>
                             {linksArr.map(({ key, link, name }) => (
                                 <li key={key}>
-                                    <NavLink to={link} activeClassName={""}>
+                                    <NavLink to={link} activeClassName={""} data-testid='nav-links'>
                                         {name}
                                     </NavLink>
                                 </li>
@@ -56,7 +59,7 @@ class Header extends PureComponent {
                     </Row>
                 </Col>
 
-                <div className="uk-inline">
+                <div className="uk-inline" data-testid='hamburger-container'>
                     <span
                         id="burger-cont"
                         className="burger-cont uk-button uk-button-default"
@@ -68,6 +71,7 @@ class Header extends PureComponent {
                     <div
                         className="sidebar"
                         id="sidebar"
+                        data-testid="burger-dropdown"
                         uk-dropdown="mode: click;">
                         <Col className="right-container col-11">
                             <Row align="middle">

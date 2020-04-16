@@ -34,9 +34,9 @@ const Footer = () => {
         }
     ];
     return (
-        <Row className="footer" justify="space-between">
+        <Row className="footer" justify="space-between" id='footer'>
             <Col className="left-container">
-                <NavLink to="/" activeClassName={""}>
+                <NavLink to="/" activeClassName={""} data-testid="route-home-from-footer">
                     <img src={Logo} alt="logo" />
                 </NavLink>
                 <Row className="svgs-container" justify="space-between">
